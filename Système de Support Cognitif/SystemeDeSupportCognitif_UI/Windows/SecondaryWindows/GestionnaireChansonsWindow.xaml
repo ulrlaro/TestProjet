@@ -1,0 +1,375 @@
+﻿<Window x:Class="SystemeDeSupportCognitif_UI.Windows.SecondaryWindows.GestionnaireChansonsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:GestionnaireChansonsWindowViews="clr-namespace:SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireChansonsWindow"
+        xmlns:GestionnaireChansonsWindowViewModels="clr-namespace:SystemeDeSupportCognitif_UI.ViewModels.SecondaryWindows.GestionnaireChansonsWindow"
+        mc:Ignorable="d"
+        Width="800"
+        Height="500"
+        Background="#141414"
+        Title="Gestionnaire de chansons"
+        WindowStyle="None">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <DockPanel Name="WindowButton" Width="45">
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" FontSize="12" FontFamily="Segoe MDL2 Assets" Foreground="#d2d2d2" RenderOptions.ClearTypeHint="Auto" TextOptions.TextRenderingMode="Aliased" TextOptions.TextFormattingMode="Display"/>
+
+                        </DockPanel>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="WindowButton" Property="Background" Value="#4b4b4b"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonImageStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="41"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonFontStyle" TargetType="Label">
+            <Setter Property="Margin" Value="-15"/>
+
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="22"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonStyle" TargetType="Border">
+            <Setter Property="Height" Value="60"/>
+
+            <Setter Property="Margin" Value="5 0 5 0"/>
+
+            <Setter Property="Padding" Value="2"/>
+
+            <Setter Property="BorderThickness" Value="2"/>
+
+            <Setter Property="CornerRadius" Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#414141"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style TargetType="ToolTip">
+            <Setter Property="Width" Value="150"/>
+
+            <Setter Property="Height" Value="35"/>
+
+            <Setter Property="Placement" Value="Right"/>
+
+            <Setter Property="VerticalOffset" Value="9"/>
+
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+            <Setter Property="Background" Value="#2d2d2d"/>
+
+            <Setter Property="BorderBrush" Value="Transparent"/>
+
+            <Setter Property="FontSize" Value="19"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+            <Setter Property="HasDropShadow" Value="True"/>
+
+        </Style>
+
+        <DataTemplate DataType="{x:Type GestionnaireChansonsWindowViewModels:HomeChansonsViewModel}">
+            <GestionnaireChansonsWindowViews:HomeChansonsView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type GestionnaireChansonsWindowViewModels:AjouterChansonsViewModel}">
+            <GestionnaireChansonsWindowViews:AjouterChansonsView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type GestionnaireChansonsWindowViewModels:ConsulterChansonsViewModel}">
+            <GestionnaireChansonsWindowViews:ConsulterChansonsView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type GestionnaireChansonsWindowViewModels:ModifierChansonsViewModel}">
+            <GestionnaireChansonsWindowViews:ModifierChansonsView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type GestionnaireChansonsWindowViewModels:SupprimerChansonsViewModel}">
+            <GestionnaireChansonsWindowViews:SupprimerChansonsView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" Executed="MinimizeWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" Executed="MaximizeWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.RestoreWindowCommand}" Executed="RestoreWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}" Executed="CloseWindow"/>
+
+    </Window.CommandBindings>
+
+    <Border BorderThickness="2" BorderBrush="#af87e6">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top" Height="30">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label VerticalAlignment="Center" Content="&#xE189;" FontSize="15" FontWeight="UltraBlack" FontFamily="Segoe MDL2 Assets" Foreground="#af87e6"/>
+
+                    <Label VerticalAlignment="Center" Content="Gestionnaire de chansons" FontSize="12" FontFamily="Arial" Foreground="#d2d2d2"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Button Content="&#xE921;" Command="{x:Static SystemCommands.MinimizeWindowCommand}"/>
+
+                    <Button Name="MaximizeWindowButton" Content="&#xE922;" Command="{x:Static SystemCommands.MaximizeWindowCommand}"/>
+
+                    <Button Name="RestoreWindowButton" Content="&#xE923;" Visibility="Collapsed" Command="{x:Static SystemCommands.RestoreWindowCommand}"/>
+
+                    <Button Content="&#xE8BB;" Command="{x:Static SystemCommands.CloseWindowCommand}"/>
+
+                </StackPanel>
+
+            </DockPanel>
+
+            <DockPanel>
+                <DockPanel Name="NavigationPanel" Width="70" Background="#2d2d2d">
+                    <Border Width="225" Height="70" BorderThickness="0 1 0 1" DockPanel.Dock="Top" Background="#1e1e1e" BorderBrush="#af87e6">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Name="NavigationPanelToggleButton" Grid.Column="0" Background="Transparent" Click="ToggleButton_Click">
+                                <ToggleButton.Style>
+                                    <Style TargetType="ToggleButton">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                        <Label Name="ToggleButtonContent" Width="45" Grid.Column="0" HorizontalAlignment="Center" Content="&#xE700;" Foreground="#e6e6e6" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                                    </Border>
+
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="true">
+                                                            <Setter TargetName="ToggleButtonContent" Property="FontSize" Value="45"/>
+
+                                                        </Trigger>
+
+                                                    </ControlTemplate.Triggers>
+
+                                                </ControlTemplate>
+
+                                            </Setter.Value>
+
+                                        </Setter>
+
+                                    </Style>
+
+                                </ToggleButton.Style>
+
+                                <ToggleButton.Triggers>
+                                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="NavigationPanel" Storyboard.TargetProperty="Width" From="225" To="70" BeginTime="0:0:0" Duration="0:0:0.2"/>
+
+                                            </Storyboard>
+
+                                        </BeginStoryboard>
+
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="NavigationPanel" Storyboard.TargetProperty="Width" From="70" To="225" BeginTime="0:0:0" Duration="0:0:0.3"/>
+
+                                            </Storyboard>
+
+                                        </BeginStoryboard>
+
+                                    </EventTrigger>
+
+                                </ToggleButton.Triggers>
+
+                            </ToggleButton>
+
+                            <Label Grid.Column="1" VerticalAlignment="Center" Content="Navigation" FontSize="25" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <UniformGrid DockPanel.Dock="Top" Rows="4" Columns="1" >
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="AjouterButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="AjouterButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE105;" Foreground="#4b96ff" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" HorizontalAlignment="Left" Content="Ajouter" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="AjouterToolTip" Content="Ajouter"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="ConsulterButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="ConsulterButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE7B3;" Foreground="#64c84b" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Consulter" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="ConsulterToolTip" Content="Consulter"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="ModifierButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="ModifierButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE104;" Foreground="#ffd719" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Modifier" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="ModifierToolTip" Content="Modifier"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="SupprimerButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="SupprimerButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE107;" Foreground="#d2324b" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Supprimer" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="SupprimerToolTip" Content="Supprimer"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                    </UniformGrid>
+
+                </DockPanel>
+
+                <Border BorderThickness="1 1 0 0" BorderBrush="#af87e6">
+                    <DockPanel>
+                        <ContentControl Content="{Binding}"/>
+
+                    </DockPanel>
+
+                </Border>
+
+            </DockPanel>
+
+        </DockPanel>
+
+    </Border>
+
+</Window>

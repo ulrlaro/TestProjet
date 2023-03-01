@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93CBB2D2-FB35-4C78-B239-70748B0936C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SystemeDeSupportCognitif_UI</RootNamespace>
+    <AssemblyName>SystemeDeSupportCognitif_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Systeme de Support Cognitif Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\AjouterAcquisitionsView.xaml.cs">
+      <DependentUpon>AjouterAcquisitionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\ConsulterAcquisitionsView.xaml.cs">
+      <DependentUpon>ConsulterAcquisitionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\HomeAcquisitionsView.xaml.cs">
+      <DependentUpon>HomeAcquisitionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\ModifierAcquisitionsView.xaml.cs">
+      <DependentUpon>ModifierAcquisitionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\SupprimerAcquisitionsView.xaml.cs">
+      <DependentUpon>SupprimerAcquisitionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEmploisWindow\AjouterEmploisView.xaml.cs">
+      <DependentUpon>AjouterEmploisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEmploisWindow\ConsulterEmploisView.xaml.cs">
+      <DependentUpon>ConsulterEmploisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEmploisWindow\HomeEmploisView.xaml.cs">
+      <DependentUpon>HomeEmploisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEmploisWindow\ModifierEmploisView.xaml.cs">
+      <DependentUpon>ModifierEmploisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEmploisWindow\SupprimerEmploisView.xaml.cs">
+      <DependentUpon>SupprimerEmploisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireRecettesWindow\AjouterRecettesView.xaml.cs">
+      <DependentUpon>AjouterRecettesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireRecettesWindow\ConsulterRecettesView.xaml.cs">
+      <DependentUpon>ConsulterRecettesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireRecettesWindow\HomeRecettesView.xaml.cs">
+      <DependentUpon>HomeRecettesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireRecettesWindow\ModifierRecettesView.xaml.cs">
+      <DependentUpon>ModifierRecettesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireRecettesWindow\SupprimerRecettesView.xaml.cs">
+      <DependentUpon>SupprimerRecettesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireResidencesWindow\AjouterResidencesView.xaml.cs">
+      <DependentUpon>AjouterResidencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireResidencesWindow\ConsulterResidencesView.xaml.cs">
+      <DependentUpon>ConsulterResidencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireResidencesWindow\HomeResidencesView.xaml.cs">
+      <DependentUpon>HomeResidencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireResidencesWindow\ModifierResidencesView.xaml.cs">
+      <DependentUpon>ModifierResidencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireResidencesWindow\SupprimerResidencesView.xaml.cs">
+      <DependentUpon>SupprimerResidencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchWindow\RechercheWindow.xaml.cs">
+      <DependentUpon>RechercheWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireAcquisitionsWindow.xaml.cs">
+      <DependentUpon>GestionnaireAcquisitionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConfirmationWindows\AjoutConfirmationWindow.xaml.cs">
+      <DependentUpon>AjoutConfirmationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireChansonsWindow.xaml.cs">
+      <DependentUpon>GestionnaireChansonsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireDemarchesWindow.xaml.cs">
+      <DependentUpon>GestionnaireDemarchesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireDocumentsWindow.xaml.cs">
+      <DependentUpon>GestionnaireDocumentsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireEmploisWindow.xaml.cs">
+      <DependentUpon>GestionnaireEmploisWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireEvenementsWindow.xaml.cs">
+      <DependentUpon>GestionnaireEvenementsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireProjetsWindow.xaml.cs">
+      <DependentUpon>GestionnaireProjetsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireRecettesWindow.xaml.cs">
+      <DependentUpon>GestionnaireRecettesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConfirmationWindows\ModificationConfirmationWindow.xaml.cs">
+      <DependentUpon>ModificationConfirmationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondaryWindows\GestionnaireResidencesWindow.xaml.cs">
+      <DependentUpon>GestionnaireResidencesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConfirmationWindows\SuppressionConfirmationWindow.xaml.cs">
+      <DependentUpon>SuppressionConfirmationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainWindow\BiographieViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\CompteViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\GestionnairesViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\HomeViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\ParametresViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireAcquisitionsWindow\AjouterAcquisitionsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireAcquisitionsWindow\ConsulterAcquisitionsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireAcquisitionsWindow\HomeAcquisitionsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireAcquisitionsWindow\ModifierAcquisitionsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireAcquisitionsWindow\SupprimerAcquisitionsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireChansonsWindow\AjouterChansonsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireChansonsWindow\ConsulterChansonsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireChansonsWindow\HomeChansonsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireChansonsWindow\ModifierChansonsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireChansonsWindow\SupprimerChansonsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDemarchesWindow\AjouterDemarchesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDemarchesWindow\ConsulterDemarchesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDemarchesWindow\HomeDemarchesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDemarchesWindow\ModifierDemarchesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDemarchesWindow\SupprimerDemarchesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDocumentsWindow\AjouterDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDocumentsWindow\ConsulterDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDocumentsWindow\HomeDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDocumentsWindow\ModifierDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireDocumentsWindow\SupprimerDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEmploisWindow\AjouterEmploisViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEmploisWindow\ConsulterEmploisViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEmploisWindow\HomeEmploisViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEmploisWindow\ModifierEmploisViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEmploisWindow\SupprimerEmploisViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEvenementsWindow\AjouterEvenementsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEvenementsWindow\ConsulterEvenementsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEvenementsWindow\HomeEvenementsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEvenementsWindow\ModifierEvenementsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireEvenementsWindow\SupprimerEvenementsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireProjetsWindow\AjouterProjetsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireProjetsWindow\ConsulterProjetsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireProjetsWindow\HomeProjetsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireProjetsWindow\ModifierProjetsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireProjetsWindow\SupprimerProjetsViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireRecettesWindow\AjouterRecettesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireRecettesWindow\ConsulterRecettesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireRecettesWindow\HomeRecettesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireRecettesWindow\ModifierRecettesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireRecettesWindow\SupprimerRecettesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireResidencesWindow\AjouterResidencesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireResidencesWindow\ConsulterResidencesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireResidencesWindow\HomeResidencesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireResidencesWindow\ModifierResidencesViewModel.cs" />
+    <Compile Include="ViewModels\SecondaryWindows\GestionnaireResidencesWindow\SupprimerResidencesViewModel.cs" />
+    <Compile Include="Views\MainWindow\ChronologieView.xaml.cs">
+      <DependentUpon>ChronologieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow\CompteView.xaml.cs">
+      <DependentUpon>CompteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow\GestionnairesView.xaml.cs">
+      <DependentUpon>GestionnairesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow\ParametresView.xaml.cs">
+      <DependentUpon>ParametresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireChansonsWindow\AjouterChansonsView.xaml.cs">
+      <DependentUpon>AjouterChansonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireChansonsWindow\ConsulterChansonsView.xaml.cs">
+      <DependentUpon>ConsulterChansonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireChansonsWindow\HomeChansonsView.xaml.cs">
+      <DependentUpon>HomeChansonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireChansonsWindow\ModifierChansonsView.xaml.cs">
+      <DependentUpon>ModifierChansonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireChansonsWindow\SupprimerChansonsView.xaml.cs">
+      <DependentUpon>SupprimerChansonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\AjouterDemarchesView.xaml.cs">
+      <DependentUpon>AjouterDemarchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\ConsulterDemarchesView.xaml.cs">
+      <DependentUpon>ConsulterDemarchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\HomeDemarchesView.xaml.cs">
+      <DependentUpon>HomeDemarchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\ModifierDemarchesView.xaml.cs">
+      <DependentUpon>ModifierDemarchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\SupprimerDemarchesView.xaml.cs">
+      <DependentUpon>SupprimerDemarchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\AjouterDocumentsView.xaml.cs">
+      <DependentUpon>AjouterDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\ConsulterDocumentsView.xaml.cs">
+      <DependentUpon>ConsulterDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\HomeDocumentsView.xaml.cs">
+      <DependentUpon>HomeDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\ModifierDocumentsView.xaml.cs">
+      <DependentUpon>ModifierDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\SupprimerDocumentsView.xaml.cs">
+      <DependentUpon>SupprimerDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\AjouterEvenementsView.xaml.cs">
+      <DependentUpon>AjouterEvenementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\ConsulterEvenementsView.xaml.cs">
+      <DependentUpon>ConsulterEvenementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\HomeEvenementsView.xaml.cs">
+      <DependentUpon>HomeEvenementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\ModifierEvenementsView.xaml.cs">
+      <DependentUpon>ModifierEvenementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\SupprimerEvenementsView.xaml.cs">
+      <DependentUpon>SupprimerEvenementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireProjetsWindow\AjouterProjetsView.xaml.cs">
+      <DependentUpon>AjouterProjetsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireProjetsWindow\ConsulterProjetsView.xaml.cs">
+      <DependentUpon>ConsulterProjetsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireProjetsWindow\HomeProjetsView.xaml.cs">
+      <DependentUpon>HomeProjetsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireProjetsWindow\ModifierProjetsView.xaml.cs">
+      <DependentUpon>ModifierProjetsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondaryWindows\GestionnaireProjetsWindow\SupprimerProjetsView.xaml.cs">
+      <DependentUpon>SupprimerProjetsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\AjouterAcquisitionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\ConsulterAcquisitionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\HomeAcquisitionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\ModifierAcquisitionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireAcquisitionsWindow\SupprimerAcquisitionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEmploisWindow\AjouterEmploisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEmploisWindow\ConsulterEmploisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEmploisWindow\HomeEmploisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEmploisWindow\ModifierEmploisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEmploisWindow\SupprimerEmploisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireRecettesWindow\AjouterRecettesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireRecettesWindow\ConsulterRecettesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireRecettesWindow\HomeRecettesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireRecettesWindow\ModifierRecettesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireRecettesWindow\SupprimerRecettesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireResidencesWindow\AjouterResidencesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireResidencesWindow\ConsulterResidencesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireResidencesWindow\HomeResidencesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireResidencesWindow\ModifierResidencesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireResidencesWindow\SupprimerResidencesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\SearchWindow\RechercheWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireAcquisitionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConfirmationWindows\AjoutConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireChansonsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireDemarchesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireDocumentsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireEmploisWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireEvenementsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireProjetsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireRecettesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\ConfirmationWindows\ModificationConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondaryWindows\GestionnaireResidencesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConfirmationWindows\SuppressionConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow\ChronologieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow\CompteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow\GestionnairesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow\ParametresView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireChansonsWindow\AjouterChansonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireChansonsWindow\ConsulterChansonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireChansonsWindow\HomeChansonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireChansonsWindow\ModifierChansonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireChansonsWindow\SupprimerChansonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\AjouterDemarchesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\ConsulterDemarchesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\HomeDemarchesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\ModifierDemarchesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDemarchesWindow\SupprimerDemarchesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\AjouterDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\ConsulterDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\HomeDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\ModifierDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireDocumentsWindow\SupprimerDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\AjouterEvenementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\ConsulterEvenementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\HomeEvenementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\ModifierEvenementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireEvenementsWindow\SupprimerEvenementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireProjetsWindow\AjouterProjetsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireProjetsWindow\ConsulterProjetsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireProjetsWindow\HomeProjetsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireProjetsWindow\ModifierProjetsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondaryWindows\GestionnaireProjetsWindow\SupprimerProjetsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemeDeSupportCognitif_Affaires\SystemeDeSupportCognitif_Affaires.csproj">
+      <Project>{20fca425-7179-445c-a843-b6069e5b04d2}</Project>
+      <Name>SystemeDeSupportCognitif_Affaires</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Systeme de Support Cognitif Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Window Icons\Main Window\Systeme de Support Cognitif Logo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

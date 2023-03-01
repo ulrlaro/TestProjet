@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Emplois>
+  <Emploi Id="1">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Non défini.</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="2">
+    <Title>Pour</Title>
+    <Position>Travailleur</Position>
+    <Domain>Travail</Domain>
+    <Company>Dell</Company>
+    <ContractNumber>1010</ContractNumber>
+    <HourlyRate>20</HourlyRate>
+    <StartDate>2023-02-01</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="3">
+    <Title>papa</Title>
+    <Position>papa</Position>
+    <Domain>papa</Domain>
+    <Company>Dell</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>35</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="4">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Canam</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>20</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="5">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Non défini.</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="6">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Apple</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="7">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Samsung</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="8">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Non défini.</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="9">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Poutlelr</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="10">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>Non défini.</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+  <Emploi Id="11">
+    <Title>Non défini.</Title>
+    <Position>Non défini.</Position>
+    <Domain>Non défini.</Domain>
+    <Company>dell</Company>
+    <ContractNumber>Non défini.</ContractNumber>
+    <HourlyRate>Non défini.</HourlyRate>
+    <StartDate>2023-02-28</StartDate>
+    <EndDate>2023-02-28</EndDate>
+    <Tasks>Non défini.</Tasks>
+    <Description>Non défini.</Description>
+  </Emploi>
+</Emplois>

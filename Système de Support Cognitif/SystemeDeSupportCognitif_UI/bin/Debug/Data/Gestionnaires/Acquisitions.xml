@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Acquisitions>
+  <Acquisition Id="1">
+    <Name>Non défini.</Name>
+    <Price>Non défini.</Price>
+    <Seller>Non défini.</Seller>
+    <PurchaseDate>2023-02-28</PurchaseDate>
+    <DisposalDate>2023-02-28</DisposalDate>
+    <WarrantyExpirationDate>2023-02-28</WarrantyExpirationDate>
+    <Warranty>Non défini.</Warranty>
+    <Description>Non défini.</Description>
+  </Acquisition>
+  <Acquisition Id="2">
+    <Name>Papa</Name>
+    <Price>100</Price>
+    <Seller>Non défini.</Seller>
+    <PurchaseDate>2023-02-28</PurchaseDate>
+    <DisposalDate>2023-02-28</DisposalDate>
+    <WarrantyExpirationDate>2023-02-28</WarrantyExpirationDate>
+    <Warranty>Non défini.</Warranty>
+    <Description>Non défini.</Description>
+  </Acquisition>
+</Acquisitions>

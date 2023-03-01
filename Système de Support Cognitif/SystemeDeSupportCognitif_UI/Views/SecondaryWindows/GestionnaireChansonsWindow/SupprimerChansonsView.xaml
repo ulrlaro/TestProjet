@@ -1,0 +1,260 @@
+﻿<UserControl x:Class="SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireChansonsWindow.SupprimerChansonsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="500">
+
+    <UserControl.Resources>
+        <Style x:Key="NavigationButtonStyle" TargetType="Border">
+            <Setter Property="Margin" Value="5 3"/>
+
+            <Setter Property="CornerRadius" Value="10"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#232323"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style x:Key="NavigationButtonContentStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="30"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+            <Setter Property="Foreground" Value="#d2324b"/>
+
+        </Style>
+
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="5 0 5 0"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="TextDecorations" Value="Underline"/>
+
+            <Setter Property="Foreground" Value="#d2d2d2"/>
+
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="FontSize" Value="18"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+            <Setter Property="TextWrapping" Value="Wrap"/>
+
+            <Setter Property="IsReadOnly" Value="True"/>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Suppression de chansons" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+        <Button Name="SupprimerLaChansonButton" DockPanel.Dock="Bottom" Content="Supprimer la chanson" FontSize="20" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Bottom" Click="SupprimerLaChansonButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+
+                </Style>
+
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#d2324b"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Margin="10 0 10 10" Padding="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#e6324a"/>
+
+                                    </Trigger>
+
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+
+                        </Setter.Value>
+
+                    </Setter>
+
+                </Style>
+
+            </Button.Style>
+
+        </Button>
+
+        <DockPanel Margin="0 10" DockPanel.Dock="Top">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="LeftNavigationButtonColumn" Width="60"/>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Name="RightNavigationButtonColumn" Width="60"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Border Name="LeftNavigationButton" Grid.Column="0" Style="{StaticResource NavigationButtonStyle}" MouseLeftButtonUp="LeftNavigationButton_Click">
+                    <Label Content="&#xE26C;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+                <Border Padding="5" Grid.Column="1" BorderThickness="2" CornerRadius="10" Background="#232323" BorderBrush="#4b4b4b">
+                    <DockPanel>
+                        <TextBlock Name="NoChansonMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Vous n'avez pas de chansons! Veuillez en ajouter avant de les supprimer." FontSize="0.01" FontFamily="Arial" Foreground="#e6e6e6" TextDecorations="None" Visibility="Hidden"/>
+
+                        <Grid DockPanel.Dock="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+
+                                <RowDefinition/>
+
+                                <RowDefinition/>
+
+                                <RowDefinition Height="1.5*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Name="TitreTextBlock" Text="Titre:"/>
+
+                                    <TextBox Name="TitreTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Name="DureeTextBlock" Text="Durée:"/>
+
+                                    <TextBox Name="DureeTextBox"/>
+
+                                </StackPanel>
+
+                            </Grid>
+
+                            <UniformGrid Grid.Row="1" Columns="3">
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Name="AuteursTextBlock" Text="Auteur(e)s:"/>
+
+                                    <TextBox Name="AuteursTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Name="CompositeursTextBlock" Text="Compositeur(e)s:"/>
+
+                                    <TextBox Name="CompositeursTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Name="InterpretesTextBlock" Text="Interprètes:"/>
+
+                                    <TextBox Name="InterpretesTextBox"/>
+
+                                </StackPanel>
+
+                            </UniformGrid>
+
+                            <UniformGrid Grid.Row="2" Columns="3">
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Name="AlbumTextBlock" Text="Album:"/>
+
+                                    <TextBox Name="AlbumTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Name="MaisonDeDisqueTextBlock" Text="Maison de disque:"/>
+
+                                    <TextBox Name="MaisonDeDisqueTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Name="DateDeSortieTextBlock" Text="Date de sortie:"/>
+
+                                    <TextBox Name="DateDeSortieTextBox"/>
+
+                                </StackPanel>
+
+                            </UniformGrid>
+
+                            <UniformGrid Grid.Row="3" Columns="2">
+                                <DockPanel Margin="5 0 5 5" Grid.Column="0">
+                                    <TextBlock Name="ParolesTextBlock" DockPanel.Dock="Top" Text="Paroles:"/>
+
+                                    <TextBox Name="ParolesTextBox" DockPanel.Dock="Top" BorderThickness="2" Background="#3c3c3c" BorderBrush="#646464" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True"/>
+
+                                </DockPanel>
+
+                                <DockPanel Margin="5 0 5 5" Grid.Column="1">
+                                    <TextBlock Name="DescriptionTextBlock" DockPanel.Dock="Top" Text="Description:"/>
+
+                                    <TextBox Name="DescriptionTextBox" DockPanel.Dock="Top" BorderThickness="2" Background="#3c3c3c" BorderBrush="#646464" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True"/>
+
+                                </DockPanel>
+
+                            </UniformGrid>
+
+                        </Grid>
+
+                    </DockPanel>
+
+                </Border>
+
+                <Border Name="RightNavigationButton" Grid.Column="2" Style="{StaticResource NavigationButtonStyle}" MouseLeftButtonUp="RightNavigationButton_Click">
+                    <Label Content="&#xE26B;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+            </Grid>
+
+        </DockPanel>
+
+    </DockPanel>
+
+</UserControl>

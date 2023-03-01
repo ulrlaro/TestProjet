@@ -1,0 +1,12 @@
+﻿<Application x:Class="SystemeDeSupportCognitif_UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SystemeDeSupportCognitif_UI"
+             StartupUri="/Windows/MainWindow/MainWindow.xaml"
+             ShutdownMode="OnMainWindowClose">
+
+    <Application.Resources>
+         
+    </Application.Resources>
+
+</Application>

@@ -1,0 +1,201 @@
+﻿<UserControl x:Class="SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEvenementsWindow.SupprimerEvenementsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignWidth="800"
+             d:DesignHeight="500">
+
+    <UserControl.Resources>
+        <Style x:Key="NavigationButtonStyle" TargetType="Border">
+            <Setter Property="Margin" Value="5 3"/>
+
+            <Setter Property="CornerRadius" Value="10"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#232323"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style x:Key="NavigationButtonContentStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="30"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+            <Setter Property="Foreground" Value="#d2324b"/>
+
+        </Style>
+
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="5 0 5 0"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="TextDecorations" Value="Underline"/>
+
+            <Setter Property="Foreground" Value="#d2d2d2"/>
+
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="FontSize" Value="18"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+            <Setter Property="TextWrapping" Value="Wrap"/>
+
+            <Setter Property="IsReadOnly" Value="True"/>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Supression d'événements" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+        <Button Name="SupprimerEvenementButton" DockPanel.Dock="Bottom" Content="Supprimer l'événement" FontSize="20" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Bottom" Click="SupprimerEvenementButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+
+                </Style>
+
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#d2324b"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Margin="10 0 10 10" Padding="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#e6324a"/>
+
+                                    </Trigger>
+
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+
+                        </Setter.Value>
+
+                    </Setter>
+
+                </Style>
+
+            </Button.Style>
+
+        </Button>
+
+        <DockPanel Margin="0 10" DockPanel.Dock="Top">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="LeftNavigationButtonColumn" Width="60"/>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Name="RightNavigationButtonColumn" Width="60"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Border Name="LeftNavigationButton" Grid.Column="0" Style="{StaticResource NavigationButtonStyle}" MouseLeftButtonUp="LeftNavigationButton_Click">
+                    <Label Content="&#xE26C;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+                <Border Padding="5" Grid.Column="1" BorderThickness="2" CornerRadius="10" Background="#232323" BorderBrush="#4b4b4b">
+                    <DockPanel>
+                        <TextBlock Name="NoEvenementMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Vous n'avez pas d'événements! Veuillez en ajouter avant de les consulter." FontSize="0.01" TextDecorations="None" Foreground="#e6e6e6" Visibility="Hidden"/>
+
+                        <UniformGrid DockPanel.Dock="Top" Rows="3">
+                            <UniformGrid Columns="2">
+                                <StackPanel>
+                                    <TextBlock Name="NomTextBlock" Text="Nom:"/>
+
+                                    <TextBox Name="NomTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock Name="CategorieTextBlock" Text="Catégorie:"/>
+
+                                    <TextBox Name="CategorieTextBox"/>
+
+                                </StackPanel>
+
+                            </UniformGrid>
+
+                            <UniformGrid Columns="2">
+                                <StackPanel>
+                                    <TextBlock Name="DateDeDebutTextBlock" Text="Date de début:"/>
+
+                                    <TextBox Name="DateDeDebutTextBox"/>
+
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock Name="DateDeFinTextBlock" Text="Date de fin:"/>
+
+                                    <TextBox Name="DateDeFinTextBox"/>
+
+                                </StackPanel>
+
+                            </UniformGrid>
+
+                            <DockPanel Margin="5 0 5 5">
+                                <TextBlock Name="DescriptionTextBlock" DockPanel.Dock="Top" Text="Description:"/>
+
+                                <TextBox Name="DescriptionTextBox" DockPanel.Dock="Top" BorderThickness="2" Background="#3c3c3c" BorderBrush="#646464" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True"/>
+
+                            </DockPanel>
+
+                        </UniformGrid>
+
+                    </DockPanel>
+
+                </Border>
+
+                <Border Name="RightNavigationButton" Grid.Column="2" Style="{StaticResource NavigationButtonStyle}" MouseLeftButtonUp="RightNavigationButton_Click">
+                    <Label Content="&#xE26B;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+            </Grid>
+
+        </DockPanel>
+
+    </DockPanel>
+
+</UserControl>

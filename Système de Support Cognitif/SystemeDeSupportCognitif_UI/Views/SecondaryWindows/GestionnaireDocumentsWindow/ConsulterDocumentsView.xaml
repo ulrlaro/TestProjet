@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireDocumentsWindow.ConsulterDocumentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="500">
+
+    <UserControl.Resources>
+        <Style x:Key="NavigationButtonStyle" TargetType="Border">
+            <Setter Property="Margin" Value="5 3"/>
+
+            <Setter Property="CornerRadius" Value="10"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#232323"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style x:Key="NavigationButtonContentStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="30"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+            <Setter Property="Foreground" Value="#64c84b"/>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Consultation de documents" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+        <DockPanel Margin="0 10" DockPanel.Dock="Top">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="LeftNavigationButtonColumn" Width="60"/>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Name="RightNavigationButtonColumn" Width="60"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Border Name="LeftNavigationButton" Grid.Column="0" Style="{StaticResource NavigationButtonStyle}">
+                    <Label Content="&#xE26C;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+                <Border Padding="5" Grid.Column="1" BorderThickness="2" CornerRadius="10" Background="#232323" BorderBrush="#4b4b4b">
+                    <DockPanel>
+                        <TextBlock Name="NoDocumentMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Vous n'avez pas de documents! Veuillez en ajouter avant de les consulter." FontSize="0.01" FontFamily="Arial" Foreground="#e6e6e6" TextDecorations="None" Visibility="Hidden"/>
+
+                        <UniformGrid DockPanel.Dock="Top" Rows="4">
+
+                        </UniformGrid>
+
+                    </DockPanel>
+
+                </Border>
+
+                <Border Name="RightNavigationButton" Grid.Column="2" Style="{StaticResource NavigationButtonStyle}">
+                    <Label Content="&#xE26B;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+            </Grid>
+
+        </DockPanel>
+
+    </DockPanel>
+
+</UserControl>

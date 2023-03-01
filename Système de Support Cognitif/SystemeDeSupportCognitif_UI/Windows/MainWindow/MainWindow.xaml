@@ -1,0 +1,376 @@
+﻿<Window x:Class="SystemeDeSupportCognitif_UI.Windows.MainWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MainWindowViews="clr-namespace:SystemeDeSupportCognitif_UI.Views.MainWindow"
+        xmlns:MainWindowViewModels="clr-namespace:SystemeDeSupportCognitif_UI.ViewModels.MainWindow"
+        mc:Ignorable="d"
+        Width="1000"
+        Height="650"
+        Background="#141414"
+        Title="Système de Support Cognitif"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <DockPanel Name="WindowButton" Width="45">
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" FontSize="12" FontFamily="Segoe MDL2 Assets" Foreground="#d2d2d2" RenderOptions.ClearTypeHint="Auto" TextOptions.TextRenderingMode="Aliased" TextOptions.TextFormattingMode="Display"/>
+
+                        </DockPanel>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="WindowButton" Property="Background" Value="#4b4b4b"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonImageStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="55"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonFontStyle" TargetType="Label">
+            <Setter Property="Margin" Value="-15"/>
+
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="25"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+        </Style>
+
+        <Style x:Key="NavigationPanelButtonStyle" TargetType="Border">
+            <Setter Property="Height" Value="75"/>
+
+            <Setter Property="Margin" Value="5 0 5 0"/>
+
+            <Setter Property="Padding" Value="2"/>
+
+            <Setter Property="BorderThickness" Value="2"/>
+
+            <Setter Property="CornerRadius" Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#414141"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style TargetType="ToolTip">
+            <Setter Property="Width" Value="150"/>
+
+            <Setter Property="Height" Value="35"/>
+
+            <Setter Property="Placement" Value="Right"/>
+
+            <Setter Property="VerticalOffset" Value="15"/>
+
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+            <Setter Property="Background" Value="#2d2d2d"/>
+
+            <Setter Property="BorderBrush" Value="Transparent"/>
+
+            <Setter Property="FontSize" Value="20"/>
+
+            <Setter Property="FontFamily" Value="Arial"/>
+
+            <Setter Property="Foreground" Value="#e6e6e6"/>
+
+            <Setter Property="HasDropShadow" Value="True"/>
+
+        </Style>
+
+        <DataTemplate DataType="{x:Type MainWindowViewModels:HomeViewModel}">
+            <MainWindowViews:HomeView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type MainWindowViewModels:CompteViewModel}">
+            <MainWindowViews:CompteView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type MainWindowViewModels:GestionnairesViewModel}">
+            <MainWindowViews:GestionnairesView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type MainWindowViewModels:ChronologieViewModel}">
+            <MainWindowViews:ChronologieView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type MainWindowViewModels:ParametresViewModel}">
+            <MainWindowViews:ParametresView DataContext="{Binding}"/>
+
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" Executed="MinimizeWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" Executed="MaximizeWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.RestoreWindowCommand}" Executed="RestoreWindow"/>
+
+        <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}" Executed="CloseWindow"/>
+
+    </Window.CommandBindings>
+
+    <Border BorderThickness="2" BorderBrush="#787878">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top" Height="30">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Margin="5" Source="/Assets/Images/Window Icons/Main Window/Systeme de Support Cognitif Logo.ico" Stretch="Uniform"/>
+
+                    <Label VerticalAlignment="Center" Content="Système de Support Cognitif" FontSize="12" FontFamily="Arial" Foreground="#d2d2d2"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Button Content="&#xE921;" Command="{x:Static SystemCommands.MinimizeWindowCommand}"/>
+
+                    <Button Name="MaximizeWindowButton" Content="&#xE922;" Command="{x:Static SystemCommands.MaximizeWindowCommand}"/>
+
+                    <Button Name="RestoreWindowButton" Content="&#xE923;" Visibility="Collapsed" Command="{x:Static SystemCommands.RestoreWindowCommand}"/>
+
+                    <Button Content="&#xE8BB;" Command="{x:Static SystemCommands.CloseWindowCommand}"/>
+
+                </StackPanel>
+
+            </DockPanel>
+
+            <DockPanel>
+                <DockPanel Name="NavigationPanel" Width="85" Background="#2d2d2d">
+                    <Border Width="265" Height="85" BorderThickness="0 1 0 1" DockPanel.Dock="Top" Background="#1e1e1e" BorderBrush="#757575">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <ToggleButton Name="NavigationPanelToggleButton" Grid.Column="0" Background="Transparent" Click="ToggleButton_Click">
+                                <ToggleButton.Style>
+                                    <Style TargetType="ToggleButton">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Border Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                        <Label Name="ToggleButtonContent" Width="55" Grid.Column="0" HorizontalAlignment="Center" Content="&#xE700;" Foreground="#e6e6e6" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                                    </Border>
+
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="true">
+                                                            <Setter TargetName="ToggleButtonContent" Property="FontSize" Value="60"/>
+
+                                                        </Trigger>
+
+                                                    </ControlTemplate.Triggers>
+
+                                                </ControlTemplate>
+
+                                            </Setter.Value>
+
+                                        </Setter>
+
+                                    </Style>
+
+                                </ToggleButton.Style>
+
+                                <ToggleButton.Triggers>
+                                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="NavigationPanel" Storyboard.TargetProperty="Width" From="265" To="85" BeginTime="0:0:0" Duration="0:0:0.2"/>
+
+                                            </Storyboard>
+
+                                        </BeginStoryboard>
+
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="NavigationPanel" Storyboard.TargetProperty="Width" From="85" To="265" BeginTime="0:0:0" Duration="0:0:0.3"/>
+
+                                            </Storyboard>
+
+                                        </BeginStoryboard>
+
+                                    </EventTrigger>
+
+                                </ToggleButton.Triggers>
+
+                            </ToggleButton>
+
+                            <Label Grid.Column="1" VerticalAlignment="Center" Content="Navigation" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <UniformGrid DockPanel.Dock="Top" Rows="4" Columns="1" >
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="CompteButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="CompteButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="85"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE2AF;" Foreground="#4b96ff" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" HorizontalAlignment="Left" Content="Compte" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="CompteToolTip" Content="Compte"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="ChronologieButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="ChronologieButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="85"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE121;" Foreground="#64c84b" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Chronologie" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="ChronologieToolTip" Content="Chronologie"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="GestionnairesButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="GestionnairesButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="85"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE74C;" Foreground="#ffd719" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Gestionnaires" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="GestionnairesToolTip" Content="Gestionnaires"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                        <DockPanel Width="{Binding ActualWidth, ElementName=NavigationPanel}">
+                            <Border Name="ParametresButton" Style="{StaticResource NavigationPanelButtonStyle}" MouseLeftButtonUp="ParametresButton_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="85"/>
+
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Content="&#xE115;" Foreground="#d2324b" Style="{StaticResource NavigationPanelButtonImageStyle}"/>
+
+                                    <Label Grid.Column="1" Content="Paramètres" Style="{StaticResource NavigationPanelButtonFontStyle}"/>
+
+                                    <Grid.ToolTip>
+                                        <ToolTip Name="ParametresToolTip" Content="Paramètres"/>
+
+                                    </Grid.ToolTip>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DockPanel>
+
+                    </UniformGrid>
+
+                </DockPanel>
+
+                <Border BorderThickness="1 1 0 0" BorderBrush="#787878">
+                    <DockPanel>
+                        <ContentControl Content="{Binding}"/>
+
+                    </DockPanel>
+
+                </Border>
+
+            </DockPanel>
+
+        </DockPanel>
+
+    </Border>
+
+</Window>

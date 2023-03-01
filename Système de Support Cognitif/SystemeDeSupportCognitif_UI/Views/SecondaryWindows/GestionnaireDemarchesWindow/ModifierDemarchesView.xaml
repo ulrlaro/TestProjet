@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireDemarchesWindow.ModifierDemarchesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="500">
+
+    <UserControl.Resources>
+        <Style x:Key="NavigationButtonStyle" TargetType="Border">
+            <Setter Property="Margin" Value="5 3"/>
+
+            <Setter Property="CornerRadius" Value="10"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#232323"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+        <Style x:Key="NavigationButtonContentStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="FontSize" Value="30"/>
+
+            <Setter Property="FontWeight" Value="UltraBlack"/>
+
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+
+            <Setter Property="Foreground" Value="#ffd719"/>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Modification de démarches" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+
+        <Button Name="ModifierLaDemarcheButton" DockPanel.Dock="Bottom" Content="Modifier la démarche" FontSize="20" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Bottom">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+
+                </Style>
+
+            </Button.Resources>
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#ffd719"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Margin="10 0 10 10" Padding="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ffe61e"/>
+
+                                    </Trigger>
+
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+
+                        </Setter.Value>
+
+                    </Setter>
+
+                </Style>
+
+            </Button.Style>
+
+        </Button>
+
+        <DockPanel Margin="0 10" DockPanel.Dock="Top">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="LeftNavigationButtonColumn" Width="60"/>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Name="RightNavigationButtonColumn" Width="60"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Border Name="LeftNavigationButton" Grid.Column="0" Style="{StaticResource NavigationButtonStyle}">
+                    <Label Content="&#xE26C;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+                <Border Padding="5" Grid.Column="1" BorderThickness="2" CornerRadius="10" Background="#232323" BorderBrush="#4b4b4b">
+                    <DockPanel>
+                        <TextBlock Name="NoDemarcheMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Vous n'avez pas de démarches! Veuillez en ajouter avant de les modifier." FontSize="0.01" FontFamily="Arial" Foreground="#e6e6e6" TextDecorations="None" Visibility="Hidden"/>
+
+                        <UniformGrid DockPanel.Dock="Top" Rows="4">
+
+                        </UniformGrid>
+
+                    </DockPanel>
+
+                </Border>
+
+                <Border Name="RightNavigationButton" Grid.Column="2" Style="{StaticResource NavigationButtonStyle}">
+                    <Label Content="&#xE26B;" Style="{StaticResource NavigationButtonContentStyle}"/>
+
+                </Border>
+
+            </Grid>
+
+        </DockPanel>
+
+    </DockPanel>
+
+</UserControl>
