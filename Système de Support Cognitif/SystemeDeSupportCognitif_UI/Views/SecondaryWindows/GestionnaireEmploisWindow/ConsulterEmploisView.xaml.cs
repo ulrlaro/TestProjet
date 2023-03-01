@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Input;
 using SystemeDeSupportCognitif_Affaires;
@@ -20,6 +21,10 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
         private string _type;
 
         private string _recherche;
+
+        private List<Emploi> _nouvelleListe = new List<Emploi>();
+
+        private bool EstFiltré = false;
 
         public string UndefinedValueMessage
         {
@@ -124,23 +129,37 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
         private void UpdateWindow()
         {
             //if(_type == "tout" || _type == "")
-            if (_gestionnaireEmplois.Emplois.Count > 0)
-                FillWindow(_gestionnaireEmplois.GetEmploi(_emploiIndex));
+            if(EstFiltré == false) { 
+            
+                if (_gestionnaireEmplois.Emplois.Count > 0)
+                    FillWindow(_gestionnaireEmplois.GetEmploi(_emploiIndex));
 
+                else
+                {
+                    HideEmploiInformation();
+                    ShowNoEmploiMessage();
+                }
+            }
             else
             {
-                HideEmploiInformation();
-                ShowNoEmploiMessage();
+                if (_gestionnaireEmplois.Emplois.Count > 0)
+                    FillWindow(_gestionnaireEmplois.GetEmploiFiltre(_emploiIndex));
+
+                else
+                {
+                    HideEmploiInformation();
+                    ShowNoEmploiMessage();
+                }
             }
 
             AdjustNavigationButtonsWidth();
         }
 
-        private void UpdateWindoFiltre()
+        private void UpdateWindowFiltre(List<Emploi> _liste, ushort index)
         {
             //if(_type == "tout" || _type == "")
             if (_gestionnaireEmplois.Emplois.Count > 0)
-                FillWindow(_gestionnaireEmplois.GetEmploiFiltre(_emploiIndex));
+                FillWindow(_liste[index]);
 
             else
             {
@@ -242,15 +261,18 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
 
             rechercheWindow.ShowDialog();
 
-           
+           _emploiIndex= 0;
+
+            EstFiltré = true;
 
             _type = rechercheWindow.Type;
 
             _recherche = rechercheWindow.Recherche;
 
-            _gestionnaireEmplois.FindEmploi(_recherche, _type);
+            _nouvelleListe = _gestionnaireEmplois.FindEmploi(_recherche, _type);
 
-            UpdateWindoFiltre();
+
+            UpdateWindowFiltre(_nouvelleListe, _emploiIndex);
         }
     }
 }

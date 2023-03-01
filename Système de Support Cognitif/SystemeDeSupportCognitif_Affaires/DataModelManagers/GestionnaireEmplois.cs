@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -224,17 +225,20 @@ namespace SystemeDeSupportCognitif_Affaires
             _emplois.RemoveAt(emploiIndex);
         }
 
-        public void FindEmploi(string recherche, string type)
+        public List<Emploi> FindEmploi(string recherche, string type)
         {
             switch(type)
             {
                 case "titre":
                     _emploisFiltre = (List<Emploi>)_emplois.Where(emploi => emploi.Title == recherche).ToList();
+                    Debug.WriteLine(_emploisFiltre.ToString());
                     break;
                 case "companie":
                     _emploisFiltre = (List<Emploi>)_emplois.Where(emploi => emploi.Company == recherche).ToList();
                     break;
             }
+            Debug.WriteLine(_emploisFiltre[1].Title.ToString());
+            return _emploisFiltre;
             
 
         }

@@ -64,3 +64,16 @@ C:\Users\lpome\Desktop\My Files\School\Cégep\Sessions\Session 6\Projet de fin d
 C:\Users\lpome\Desktop\My Files\School\Cégep\Sessions\Session 6\Projet de fin d'études\Projets\ProjetFinEtudes\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Emplois.xml
 C:\Users\lpome\Desktop\My Files\School\Cégep\Sessions\Session 6\Projet de fin d'études\Projets\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Recettes.xml
 C:\Users\Ulrich\Desktop\Projet Final\ProjetFinEtudes\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Recettes.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Acquisitions.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Chansons.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Emplois.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Evenements.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Projets.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Recettes.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\Data\Gestionnaires\Residences.xml
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\SystemeDeSupportCognitif_Affaires.dll
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\bin\Debug\SystemeDeSupportCognitif_Affaires.pdb
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\obj\Debug\SystemeDeSupportCognitif_Affaires.csproj.AssemblyReference.cache
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\obj\Debug\SystemeDeSupportCognitif_Affaires.csproj.CoreCompileInputs.cache
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\obj\Debug\SystemeDeSupportCognitif_Affaires.dll
+C:\Users\julie\Desktop\Projet fin étude\projet ulrich\TestProjet\Système de Support Cognitif\SystemeDeSupportCognitif_Affaires\obj\Debug\SystemeDeSupportCognitif_Affaires.pdb
