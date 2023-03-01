@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -77,7 +79,10 @@ namespace SystemeDeSupportCognitif_UI.Windows.SearchWindow
 
         private void RechercherButton_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            if(Type != "")
+                DialogResult = true;
+            else
+                DialogResult = false;
         }
     }
 }

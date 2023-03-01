@@ -1,29 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Residences>
-  <Residence Id="1">
-    <Continent>Amérique du Nord</Continent>
-    <Country>Canada</Country>
-    <EtatProvinceTerritoire>Non défini.</EtatProvinceTerritoire>
-    <City>Non défini.</City>
-    <ZIPCode>Non défini.</ZIPCode>
-    <Address>Non défini.</Address>
-    <PhoneNumber>Non défini.</PhoneNumber>
-    <Rent>Non défini.</Rent>
-    <StartDate>2023-02-22</StartDate>
-    <EndDate>2023-02-22</EndDate>
-    <Description>Non défini.</Description>
-  </Residence>
-  <Residence Id="2">
-    <Continent>Amérique du Nord</Continent>
-    <Country>Corée du Nord</Country>
-    <EtatProvinceTerritoire>Non défini.</EtatProvinceTerritoire>
-    <City>Non défini.</City>
-    <ZIPCode>Non défini.</ZIPCode>
-    <Address>Non défini.</Address>
-    <PhoneNumber>Non défini.</PhoneNumber>
-    <Rent>Non défini.</Rent>
-    <StartDate>2023-02-22</StartDate>
-    <EndDate>2023-02-22</EndDate>
-    <Description>Non défini.</Description>
-  </Residence>
+	
 </Residences>

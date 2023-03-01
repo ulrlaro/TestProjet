@@ -119,11 +119,23 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
             else
                 LeftNavigationButtonColumn.Width = new System.Windows.GridLength(60);
 
-            if (_gestionnaireEmplois.Emplois.Count == 0 || _emploiIndex == _gestionnaireEmplois.Emplois.Count - 1)
-                RightNavigationButtonColumn.Width = new System.Windows.GridLength(10);
+            if (!EstFiltré)
+            {
+                if (_gestionnaireEmplois.Emplois.Count == 0 || _emploiIndex == _gestionnaireEmplois.Emplois.Count - 1)
+                    RightNavigationButtonColumn.Width = new System.Windows.GridLength(10);
 
+                else
+                    RightNavigationButtonColumn.Width = new System.Windows.GridLength(60);
+            }
             else
-                RightNavigationButtonColumn.Width = new System.Windows.GridLength(60);
+            {
+                if (_gestionnaireEmplois.EmploisFiltre.Count == 0 || _emploiIndex == _gestionnaireEmplois.EmploisFiltre.Count - 1)
+                    RightNavigationButtonColumn.Width = new System.Windows.GridLength(10);
+
+                else
+                    RightNavigationButtonColumn.Width = new System.Windows.GridLength(60);
+
+            }
         }
 
         private void UpdateWindow()
@@ -142,33 +154,20 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
             }
             else
             {
-                if (_gestionnaireEmplois.Emplois.Count > 0)
+                if (_gestionnaireEmplois.EmploisFiltre.Count > 0)
                     FillWindow(_gestionnaireEmplois.GetEmploiFiltre(_emploiIndex));
 
                 else
                 {
                     HideEmploiInformation();
-                    ShowNoEmploiMessage();
+                    ShowNoEmploiRechercheMessage();
                 }
             }
 
             AdjustNavigationButtonsWidth();
         }
 
-        private void UpdateWindowFiltre(List<Emploi> _liste, ushort index)
-        {
-            //if(_type == "tout" || _type == "")
-            if (_gestionnaireEmplois.Emplois.Count > 0)
-                FillWindow(_liste[index]);
 
-            else
-            {
-                HideEmploiInformation();
-                ShowNoEmploiMessage();
-            }
-
-            AdjustNavigationButtonsWidth();
-        }
 
         private void FillWindow(Emploi emploiToFill)
         {
@@ -228,6 +227,19 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
 
         private void ShowNoEmploiMessage()
         {
+            NoEmploiMessageTextBlock.Text = "Vous n'avez pas d'emploi répertorié. Veuillez en ajouter un pour les consulter!";
+
+            NoEmploiMessageTextBlock.Margin = new System.Windows.Thickness(0, 10, 0, 10);
+
+            NoEmploiMessageTextBlock.FontSize = 18;
+
+            NoEmploiMessageTextBlock.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void ShowNoEmploiRechercheMessage()
+        {
+            NoEmploiMessageTextBlock.Text = "Aucun emploi ne correspond à votre recherche! Veuillez essayer d'autre mot clés!";
+
             NoEmploiMessageTextBlock.Margin = new System.Windows.Thickness(0, 10, 0, 10);
 
             NoEmploiMessageTextBlock.FontSize = 18;
@@ -246,13 +258,15 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
         }
 
         private void RightNavigationButton_Click(object sender, MouseButtonEventArgs e)
-        {
-            if (_emploiIndex < _gestionnaireEmplois.Emplois.Count - 1)
+        { 
+           if (_emploiIndex < _gestionnaireEmplois.Emplois.Count - 1)
             {
                 _emploiIndex++;
 
                 UpdateWindow();
             }
+
+           
         }
 
         private void RechercherButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -263,16 +277,20 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
 
            _emploiIndex= 0;
 
-            EstFiltré = true;
 
             _type = rechercheWindow.Type;
 
             _recherche = rechercheWindow.Recherche;
+            if((_type != "") && (_recherche != ""))
+            {
+                EstFiltré = true;
+                _nouvelleListe = _gestionnaireEmplois.FindEmploi(_recherche, _type);
+                UpdateWindow();
+            }
+            
 
-            _nouvelleListe = _gestionnaireEmplois.FindEmploi(_recherche, _type);
 
 
-            UpdateWindowFiltre(_nouvelleListe, _emploiIndex);
         }
     }
 }

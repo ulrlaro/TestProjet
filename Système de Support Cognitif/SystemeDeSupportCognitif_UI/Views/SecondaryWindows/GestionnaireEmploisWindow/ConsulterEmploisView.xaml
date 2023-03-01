@@ -135,7 +135,7 @@
 
                 <Border Padding="5" Grid.Column="1" BorderThickness="2" CornerRadius="10" Background="#232323" BorderBrush="#4b4b4b">
                     <DockPanel>
-                        <TextBlock Name="NoEmploiMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Vous n'avez pas de d'emplois! Veuillez en ajouter avant de les consulter." FontSize="0.01" FontFamily="Arial" Foreground="#e6e6e6" TextDecorations="None" Visibility="Hidden"/>
+                        <TextBlock Name="NoEmploiMessageTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="0.01" FontFamily="Arial" Foreground="#e6e6e6" TextDecorations="None" Visibility="Hidden" TextWrapping="Wrap"/>
 
                         <UniformGrid DockPanel.Dock="Top" Rows="4">
                             <UniformGrid Columns="3">

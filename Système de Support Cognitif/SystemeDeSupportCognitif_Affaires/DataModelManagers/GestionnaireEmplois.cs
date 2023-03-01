@@ -237,7 +237,6 @@ namespace SystemeDeSupportCognitif_Affaires
                     _emploisFiltre = (List<Emploi>)_emplois.Where(emploi => emploi.Company == recherche).ToList();
                     break;
             }
-            Debug.WriteLine(_emploisFiltre[1].Title.ToString());
             return _emploisFiltre;
             
 
