@@ -269,27 +269,31 @@ namespace SystemeDeSupportCognitif_UI.Views.SecondaryWindows.GestionnaireEmplois
            
         }
 
-        private void RechercherButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void AnnulerRechercheBtn_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            _emploiIndex= 0;
+            EstFiltré = false;
+            UpdateWindow();
+        }
+
+        private void RechercherBouton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             RechercheWindow rechercheWindow = new RechercheWindow(_listeType);
 
             rechercheWindow.ShowDialog();
 
-           _emploiIndex= 0;
+            _emploiIndex = 0;
 
 
             _type = rechercheWindow.Type;
 
             _recherche = rechercheWindow.Recherche;
-            if((_type != "") && (_recherche != ""))
+            if ((_type != "") && (_recherche != ""))
             {
                 EstFiltré = true;
                 _nouvelleListe = _gestionnaireEmplois.FindEmploi(_recherche, _type);
                 UpdateWindow();
             }
-            
-
-
 
         }
     }

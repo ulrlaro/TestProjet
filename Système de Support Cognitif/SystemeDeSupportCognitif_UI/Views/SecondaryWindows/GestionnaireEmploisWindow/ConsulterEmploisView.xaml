@@ -76,47 +76,11 @@
     </UserControl.Resources>
 
     <DockPanel>
-        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Consultation d'emplois" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
-        <Button Name="RechercherButton" DockPanel.Dock="Top" Content="Rechercher" FontSize="20" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Bottom" Click="RechercherButton_Click">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="15"/>
-
-                </Style>
-
-            </Button.Resources>
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="#64c84b"/>
-
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border Margin="10 0 10 0" Padding="5" Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                                </Border>
-
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="Green"/>
-
-                                    </Trigger>
-
-                                </ControlTemplate.Triggers>
-
-                            </ControlTemplate>
-
-                        </Setter.Value>
-
-                    </Setter>
-
-                </Style>
-
-            </Button.Style>
-
-        </Button>
+        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" Content="Consultation d'emplois" FontSize="30" FontWeight="Bold" FontFamily="Arial" Foreground="#e6e6e6"/>
+            <Label Name="AnnulerRechercheBtn" Content="&#xE1A3;" FontSize="30" Foreground="red" Padding="10" DockPanel.Dock="Right" Margin="0,0,0,0" FontWeight="UltraBold" FontFamily="Segoe MDL2 Assets" MouseLeftButtonUp="AnnulerRechercheBtn_MouseLeftButtonUp"/>
+            <Label Name="RechercherBouton" Content="&#xE1A3;" FontSize="30" Foreground="#64c84b" Padding="10" DockPanel.Dock="Right" Margin="30,0,0,0" FontWeight="UltraBold" FontFamily="Segoe MDL2 Assets" MouseLeftButtonUp="RechercherBouton_MouseLeftButtonUp"/>
+        </DockPanel>
         <DockPanel Margin="0 10" DockPanel.Dock="Top">
             <Grid>
                 <Grid.ColumnDefinitions>
